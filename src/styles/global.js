@@ -6,8 +6,5 @@ const GlobalStyles = createGlobalStyle`
     *{
         box-sizing: border-box;
     }
-    button {
-        border: none;
-    }
 `;
 export default GlobalStyles;

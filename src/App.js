@@ -1,17 +1,23 @@
-import { Provider } from 'react-redux';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { RouterProvider } from 'react-router-dom';
-import router from 'routes/Routing';
-import { store } from 'store/@store';
-import GlobalStyles from 'styles/global';
+import { RecoilRoot } from 'recoil';
+import router from 'Routes/routing';
+import { ThemeProvider } from 'styled-components';
+import GlobalStyles from 'Styles/global';
+import { theme } from 'Styles/theme';
 
 function App() {
+	const queryClient = new QueryClient();
+
 	return (
-		<div>
-			<Provider store={store}>
-				<RouterProvider router={router} />
-				<GlobalStyles />
-			</Provider>
-		</div>
+		<QueryClientProvider client={queryClient}>
+			<RecoilRoot>
+				<ThemeProvider theme={theme}>
+					<GlobalStyles />
+					<RouterProvider router={router} />
+				</ThemeProvider>
+			</RecoilRoot>
+		</QueryClientProvider>
 	);
 }
 

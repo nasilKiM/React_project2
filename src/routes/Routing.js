@@ -1,38 +1,28 @@
-import Layout from 'components/Layout/Layout';
-import MovieDetailPage from 'pages/DetailPage';
-import HomePage from 'pages/HomePage';
-import NowPlaying from 'pages/NowPlaying';
-import SearchResult from 'pages/SearchResult';
-import TopRated from 'pages/TopRated';
-import UpComing from 'pages/UpComing';
-
+import LayOut from 'components/Layout';
+import HomePage from 'Pages/Home';
+// import NowPlaying from 'Pages/Home/components/NowPlaying/nowplaying';
+// import TopRated from 'Pages/Home/components/TopRated/toprated';
+// import UpComing from 'Pages/Home/components/UpComing/upcoming';
 import { createBrowserRouter } from 'react-router-dom';
 
 const router = createBrowserRouter([
 	{
-		element: <Layout />,
+		element: <LayOut />,
 		children: [
 			{ path: '/', element: <HomePage /> },
-			{
-				path: '/movie/',
-				element: <SearchResult />,
-			},
-			{
-				path: '/movie/:movie_id',
-				element: <MovieDetailPage />,
-			},
-			{
-				path: '/movie/:now_playing',
-				element: <NowPlaying />,
-			},
-			{
-				path: '/movie/:upcoming',
-				element: <UpComing />,
-			},
-			{
-				path: '/movie/:top_rated',
-				element: <TopRated />,
-			},
+
+			// {
+			// 	path: '/movie/:now_playing',
+			// 	element: <NowPlaying />,
+			// },
+			// {
+			// 	path: '/movie/:upcoming',
+			// 	element: <UpComing />,
+			// },
+			// {
+			// 	path: '/movie/:top_rated',
+			// 	element: <TopRated />,
+			// },
 		],
 	},
 ]);
